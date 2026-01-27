@@ -47,7 +47,7 @@
     <div class="price__regular">
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       <span class="price-item price-item--regular">
-        {{ money_price }}
+        {% if settings.currency_code_enabled %}{{ price | money_with_currency }}{% else %}{{ price | money }}{% endif %}
       </span>
     </div>
     <div class="price__sale">
@@ -65,7 +65,7 @@
       {%- endunless -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
       <span class="price-item price-item--sale price-item--last">
-        {{ money_price }}
+        {% if settings.currency_code_enabled %}{{ price | money_with_currency }}{% else %}{{ price | money }}{% endif %}
       </span>
     </div>
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
