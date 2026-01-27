@@ -1,0 +1,45 @@
+<!-- COLOR VARIANT -->
+
+<style>
+/* CSS CODE HERE */
+
+</style>
+
+<script>
+function filterImagesByColor(color) {
+  if (!color) return;
+
+  color = color.toLowerCase();
+
+  document.querySelectorAll('[data-media-id]').forEach((media) => {
+    const img = media.querySelector('img');
+    if (!img) return;
+
+    const alt = (img.getAttribute('alt') || '').toLowerCase();
+
+    if (alt.includes(color:${color})) {
+      media.style.removeProperty('display');
+    } else {
+      media.style.display = 'none';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const checkedRadio = document.querySelector('input[type="radio"]:checked');
+  if (checkedRadio) {
+    filterImagesByColor(checkedRadio.value);
+  }
+});
+document.addEventListener('change', function (e) {
+  const radio = e.target.closest('input[type="radio"]');
+  if (!radio) return;
+
+  filterImagesByColor(radio.value);
+});
+
+</script>
+
+{% comment %}
+LIQUID CODE HERE
+{% endcomment %}
