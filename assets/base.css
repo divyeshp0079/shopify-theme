@@ -3157,8 +3157,8 @@ details-disclosure > details {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  background: #2F80ED;
-  color: #ffffff;
+  background: #000000;
+  color: #7c1111;
   width: 38px;
   height: 38px;
   border-radius: 50%;
