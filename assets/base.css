@@ -3177,6 +3177,7 @@ details-disclosure > details {
   top: 110px;
   right: 40px;
   z-index: 99;
+  margin: 20px;
 }
 
 .language-switch-btn {

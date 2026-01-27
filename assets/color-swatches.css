@@ -1,0 +1,88 @@
+/* Color Swatch Variants */
+.product-form__color-swatches {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.color-swatch-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.color-swatch {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #814f4f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.color-swatch:hover {
+  transform: scale(1.05);
+  border-color: #383333;
+}
+
+.color-swatch.is-active {
+  border-color: #b6b6b6;
+  border-width: 3px;
+  box-shadow: 0 0 0 2px #cc2525, 0 0 0 4px #000;
+}
+
+.color-swatch input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  margin: 0;
+}
+
+.color-swatch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.color-swatch-text {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 6px;
+  display: block;
+  color: #121212;
+  max-width: 60px;
+}
+
+/* Underline indicator for active color */
+.product-form__input.color-input .color-swatch.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: #d32f2f;
+}
+
+@media (max-width: 749px) {
+  .color-swatch {
+    width: 45px;
+    height: 45px;
+  }
+}

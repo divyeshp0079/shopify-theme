@@ -11,6 +11,7 @@
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'image-variants.css' | asset_url | stylesheet_tag }}
 
   {%- style -%}
     .section-{{ section.id }}-padding {
@@ -28,6 +29,8 @@
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer" type="module"></script>
+  <script src="{{ 'color-variant-images.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'image-variants.js' | asset_url }}" defer="defer"></script>
   {% if section.settings.image_zoom == 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
   {% endif %}
@@ -78,7 +81,7 @@
               <img
                 src="https://cdn.shopify.com/s/files/1/0725/1981/1117/files/translate.gif?v=1768899178"
                 alt="Change Language"
-              >
+              >              <script src="{{ 'color-variant-images.js' | asset_url }}" defer="defer"></script>
             </button>
           {% endif %}
         {% endfor %}
