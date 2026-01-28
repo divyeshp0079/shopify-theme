@@ -1,0 +1,116 @@
+
+
+<section class="productivity-section">
+  <div class="productivity-wrapper">
+    <div class="productivity-image">
+      {% if section.settings.image %}
+        <img
+          src="{{ section.settings.image | image_url: width: 600 }}"
+          alt="Product image"
+        >
+      {% endif %}
+    </div>
+    <div class="productivity-content">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.text }}</p>
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="productivity-btn">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<style>
+  .productivity-section {
+    background: #000000;
+    padding: 90px 10px;
+    max-width:617px;
+  }
+
+  .productivity-wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 35px;
+  }
+
+  .productivity-image img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .productivity-content {
+    margin-top: 40px;
+
+
+  }
+
+  .productivity-content h2 {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .productivity-content p {
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .productivity-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #8e8f89;
+    color: #2e2626;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+</style>
+{% schema %}
+{
+  "name": "Productivity section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Productivity Essentials"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "enter text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Productivity section",
+      "category": "Custom-pro"
+    }
+  ]
+}
+{% endschema %}
