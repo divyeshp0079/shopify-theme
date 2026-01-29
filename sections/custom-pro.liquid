@@ -3,7 +3,7 @@
 <section class="productivity-section">
   <div class="productivity-wrapper">
     <div class="productivity-image">
-      {% if section.settings.image %}
+      {% if section.settings.image %}+\
         <img
           src="{{ section.settings.image | image_url: width: 600 }}"
           alt="Product image"
@@ -114,3 +114,5 @@
   ]
 }
 {% endschema %}
+
+
