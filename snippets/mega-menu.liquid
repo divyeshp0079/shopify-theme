@@ -1,0 +1,45 @@
+<nav class="mega-menu" role="navigation" aria-label="Main menu" data-style="simple">
+  <ul class="mega-menu__list">
+    {% comment %}This uses the navigation handle `main-menu`. Change to your menu handle if different.{% endcomment %}
+    {% for link in linklists.main-menu.links %}
+      <li class="mega-menu__item{% if link.links.size > 0 %} has-children{% endif %}">
+        <a href="{{ link.url }}" class="mega-menu__link">{{ link.title }}</a>
+
+        {% if link.links.size > 0 %}
+          <div class="mega-menu__dropdown" aria-hidden="true">
+            {%- comment -%} Structure supports different visual styles via the `data-style` attribute on `.mega-menu`.
+                - `simple`: centered columns
+                - `flyout`: left vertical list + columns + optional image slot on the right
+                - `masonry`: dense multi-column list
+            {%- endcomment -%}
+
+            <div class="mega-menu__inner">
+              <div class="mega-menu__columns">
+                {% for child in link.links %}
+                  <div class="mega-menu__column">
+                    <a href="{{ child.url }}" class="mega-menu__column-heading">{{ child.title }}</a>
+                    {% if child.links.size > 0 %}
+                      <ul class="mega-menu__sublist">
+                        {% for grand in child.links %}
+                          <li class="mega-menu__subitem"><a href="{{ grand.url }}">{{ grand.title }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+
+              <div class="mega-menu__aside">
+                {%- comment -%} Optional image/feature area. To enable, replace with custom image or include dynamic content.
+                {%- endcomment -%}
+                <div class="mega-menu__feature">
+                  <img src="{{ 'placeholder-menu-image.jpg' | asset_url }}" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
