@@ -1,13 +1,13 @@
-# Hi, I'm Divyesh 👋
+ Hi, I'm Divyesh 👋
 
  Shopify Theme Developer  
  Learning GitHub & Open Source  
  E-commerce Customization  
 
-##  Skills
+  Skills
 - Liquid
 - HTML/CSS
 - JavaScript
 - Shopify
 
-##  GitHub Stats
+ GitHub Stats
